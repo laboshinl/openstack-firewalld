@@ -28,8 +28,8 @@ services:
     service_ports:
       - protocol: tcp
         port: 9191
-  - service_name: qpid
-    service_description: qpid messaging service
+  - service_name: rabbitmq
+    service_description: rabbitmq messaging service
     service_ports:
       - protocol: tcp
         port: 5672
@@ -43,6 +43,11 @@ services:
     service_ports:
       - protocol: tcp
         port: 8004
+  - service_name: openstack-ceilometer-api
+    service_description: ceilometer (openstack metering service)
+    service_ports:
+      - protocol: tcp
+        port: 8877
   - service_name: openstack-heat-cfn-api
     service_description: heat cloudformation (openstack orchestration service)
     service_ports:
@@ -68,4 +73,8 @@ services:
     service_ports:
       - protocol: tcp
         port: 3260
-
+  - service_name: ntp
+    service_description: network time protocol
+    service_ports:
+      - protocol: udp
+        port: 123
